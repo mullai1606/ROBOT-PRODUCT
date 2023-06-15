@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Robot Product Page</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+    
+    header {
+      background-color: #340202;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    
+    h1 {
+      margin: 0;
+      color: #ffdbdb;
+    
+    }
+    h2 {
+      margin: 0;
+      background-color: #f1d3d3;
+      color: #571f1f;
+    
+    }
+
+
+    h3 {
+      margin: 0;
+      color: #571f1f;
+    
+    }
+    h4{
+      margin: 0;
+      background-color: #f1d3d3;
+      color: #571f1f;
+    
+    }
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: url("Source/bg.gif") no-repeat center center fixed;
+      background-size: cover;
+    }
+    
+    .product-info {
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 20px;
+      max-width: 600px;
+      text-align: center;
+    }
+    
+    img {
+      max-width: 40%;
+      height: auto;
+      cursor: pointer;
+    }
+    
+    .popup {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+    }
+    
+    .popup-content {
+      background-color: #f6b8b8;
+      padding: 20px;
+      max-width: 700px;
+      text-align: center;
+    }
+    .popup img {
+      width: 10%;
+      height: auto;
+      cursor: pointer;
+    }
+    .popup-button {
+      background-color: #333;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+    
+    .popup-button:hover {
+      background-color: #555;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Robot Product</h1>
+  </header>
+  
+  <div class="container">
+    <div class="product-info">
+      <h2>MULLU The ROBOT</h2>
+      <h3>Introducing our latest robot product! "MULLU the ROBOT" This robot is designed to assist you with various tasks at home or in the office. It is equipped with advanced artificial intelligence and can perform a wide range of functions.</h3>
+     <h4>    </h4>
+      <h4>click the image to see its specifications</h4>
+      <img src="Source/Robot.gif" alt="Robot" id="robot-image">
+    </div>
+  </div>
+  
+  <div class="popup" id="popup">
+    <div class="popup-content">
+      <h2>payload</h2>
+      <img src="Source/payload.gif" alt="Specification" id="specification-image">
+      <p>This Robo can handle and balance upto 500kgms</p>
+      <h2>Space occupied and weight</h2>
+      <img src="Source/space.gif" alt="Specification" id="specification-image">
+      <p>no need of big environment,we can operate in anywhere</p>
+      <p>Weight is about 40 kgms</p>
+      <h2>performance</h2>
+      <img src="Source/gp.gif" alt="Specification" id="specification-image">
+      <p>latest and most powerfull processor will give you the best results</p>
+      <h2>Battery</h2>
+      <img src="Source/Battery .gif" alt="Specification" id="specification-image">
+
+      <p>90 watt hour , and this is enough to handle day to day usage</p>
+
+      <button class="popup-button" onclick="togglePopup()">Close</button>
+    </div>
+  </div>
+
+  <script>
+    var popup = document.getElementById("popup");
+    var robotImage = document.getElementById("robot-image");
+    var specificationImage = document.getElementById("specification-image");
+
+    robotImage.addEventListener("click", function() {
+      togglePopup();
+    });
+
+    specificationImage.addEventListener("click", function(event) {
+      event.stopPropagation();
+    });
+
+    popup.addEventListener("click", function() {
+      togglePopup();
+    });
+
+    function togglePopup() {
+      popup.style.display = popup.style.display === "none" ? "flex" : "none";
+    }
+  </script>
+</body>
+</html>
